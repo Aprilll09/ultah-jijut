@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For my Sista 🌷</title>
+
+    <style>
+
+        /* =========================
+           BAGIAN DASAR WEBSITE
+           ========================= */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ffd6e7, #fff0f5);
+            min-height: 100vh;
+            color: #555;
+        }
+
+        .container {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+
+        /* =========================
+           BAGIAN PEMBUKA
+           ========================= */
+
+        .flower {
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            color: #d94f87;
+            margin-bottom: 10px;
+            font-size: 36px;
+        }
+
+        .subtitle {
+            color: #777;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+
+        /* =========================
+           KOTAK SURAT
+           ========================= */
+
+        .envelope {
+            background-color: white;
+            max-width: 500px;
+            margin: auto;
+            padding: 35px;
+            border-radius: 20px;
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        button {
+            border: none;
+            background-color: #e978a5;
+            color: white;
+
+            padding: 13px 28px;
+
+            border-radius: 30px;
+
+            font-size: 16px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #d65387;
+            transform: scale(1.05);
+        }
+
+
+        /* =========================
+           ISI PESAN
+           ========================= */
+
+        .message {
+            display: none;
+
+            margin-top: 30px;
+
+            line-height: 1.8;
+
+            text-align: left;
+
+            animation: muncul 0.8s ease;
+        }
+
+        .message h2 {
+            color: #d94f87;
+            text-align: center;
+
+            margin-bottom: 20px;
+        }
+
+        .message p {
+            margin-bottom: 15px;
+        }
+
+        .heart {
+            text-align: center;
+
+            font-size: 28px;
+
+            margin-top: 20px;
+        }
+
+
+        /* =========================
+           GALERI FOTO
+           ========================= */
+
+        .gallery {
+            margin-top: 80px;
+            padding: 30px 10px;
+        }
+
+        .gallery h2 {
+            color: #d94f87;
+
+            font-size: 28px;
+
+            margin-bottom: 10px;
+        }
+
+        .gallery-text {
+            color: #777;
+
+            margin-bottom: 30px;
+        }
+
+        .photo-container {
+            max-width: 800px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+        .photo-card {
+            background-color: white;
+
+            padding: 12px;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 5px 20px rgba(0, 0, 0, 0.12);
+
+            transition: 0.3s;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-8px) rotate(1deg);
+        }
+
+        .photo-card img {
+            width: 100%;
+
+            height: 250px;
+
+            object-fit: cover;
+
+            border-radius: 12px;
+        }
+
+        .photo-card p {
+            color: #777;
+
+            margin-top: 12px;
+
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           FOOTER
+           ========================= */
+
+        .footer {
+            margin-top: 60px;
+
+            color: #999;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           ANIMASI
+           ========================= */
+
+        @keyframes muncul {
+
+            from {
+                opacity: 0;
+
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /* =========================
+           RESPONSIVE HP
+           ========================= */
+
+        @media (max-width: 600px) {
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .photo-container {
+                grid-template-columns: 1fr;
+            }
+
+            .photo-card img {
+                height: 250px;
+            }
+
+            .envelope {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         MUSIK LATAR
+         ========================= -->
+
+    <audio id="lagu" loop>
+        <source src="./music.mp3" type="audio/mpeg">
+    </audio>
+
+
+    <div class="container">
+
+
+        <!-- PEMBUKA -->
+
+        <div class="flower">
+            🌷
+        </div>
+
+        <h1>
+            For my Sista
+        </h1>
+
+        <p class="subtitle">
+            I have somethin' to say...
+        </p>
+
+
+        <!-- KOTAK SURAT -->
+
+        <div class="envelope">
+
+            <button onclick="bukaPesan()">
+                💌 Open Message
+            </button>
+
+
+            <!-- ISI SURAT -->
+
+            <div class="message" id="pesan">
+
+                <h2>
+                    For ya 🌸
+                </h2>
+
+                <p>
+                    Eaaaa, cihuyy, dah umur berapa mpruy,
+                    kapan lagi gue menggunakan coding buat
+                    hadiah ultah, awokawok.
+                </p>
+
+                <p>
+                    Semoga diumur yang kesekian sekian ini,
+                    everything dreamed of can be achieved,
+                    melangkah maju, striving hard to achieve it,
+                    with good results.
+                </p>
+
+                <p>
+                    Intinya, semoga yang di semogakan tersemogakan.
+                </p>
+
+                <p>
+                    HBD ZIZAH
+                </p>
+
+                <p>
+                    Dah segitu aja, sekian, terima gaji.
+                </p>
+
+                <div class="heart">
+                    💗 🌷 💗
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- GALERI FOTO -->
+
+        <section class="gallery">
+
+            <h2>
+                📸 Your photo
+            </h2>
+
+            <p class="gallery-text">
+                Enaknya aib sih ini WKWK
+            </p>
+
+
+            <div class="photo-container">
+
+
+                <!-- FOTO 1 -->
+
+                <div class="photo-card">
+
+                    <img
+                        src="./photo jijut/Foto1.jpeg"
+                        alt="Kenangan 1"
+                    >
+
+                    <p>
+                        When bukber 🌷
+                    </p>
+
+                </div>
+
+
+                <!-- FOTO 2 -->
+
+                <div class="photo-card">
+
+                    <img
+                        src="./photo jijut/Foto2.jpeg"
+                        alt="Kenangan 2"
+                    >
+
+                    <p>
+                        Her with ayunan 💗
+                    </p>
+
+                </div>
+
+
+                <!-- FOTO 3 -->
+
+                <div class="photo-card">
+
+                    <img
+                        src="./photo jijut/Foto3.jpeg"
+                        alt="Kenangan 3"
+                    >
+
+                    <p>
+                        Mini Jijut 🌸
+                    </p>
+
+                </div>
+
+
+                <!-- FOTO 4 -->
+
+                <div class="photo-card">
+
+                    <img
+                        src="./photo jijut/Foto4.jpeg"
+                        alt="Kenangan 4"
+                    >
+
+                    <p>
+                        White hijab 🤍
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <p class="footer">
+            7 / 10 / 2026 ❤️
+        </p>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        function bukaPesan() {
+
+            let pesan = document.getElementById("pesan");
+
+            let lagu = document.getElementById("lagu");
+
+
+            // Membuka pesan
+
+            pesan.style.display = "block";
+
+
+            // Memutar musik
+
+            lagu.play();
+
+        }
+
+    </script>
+
+</body>
+
+</html>
